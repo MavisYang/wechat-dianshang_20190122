@@ -1,0 +1,309 @@
+/* pages/buyer/buyer.wxss */
+
+.buyer-main {
+    height: 100%;
+    width: 100%;
+}
+
+.buyer-main .imgBox {
+    width: 100%;
+    height: 654rpx;
+    position: relative;
+}
+
+.buyer-main .imgBox .goodImg {
+    width: 100%;
+    height: 100%;
+}
+
+.buyer-main .imgBox .icon-secKill {
+    position: absolute;
+    left: 10rpx;
+    top: 20rpx;
+    width: 202rpx;
+    height: 141rpx;
+}
+
+.buyer-main .detail {
+    width: 100%;
+    height: 96rpx;
+    display: flex;
+    background-image: linear-gradient(-120deg, #FF773E 0%, #FF4444 100%);
+    color: #FFFFFF;
+}
+
+.buyer-main .detail .price {
+    flex: auto;
+    width: 540rpx;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.buyer-main .detail .price .flex-item {
+    flex: none;
+}
+
+.buyer-main .detail .count {
+    flex: none;
+    width: 210rpx;
+    height: 100%;
+    text-align: center;
+    background: #FF763E;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #FFF800;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buyer-main .detail .count.inProgress {
+    width: 300rpx;
+}
+
+.buyer-main .detail .count .text {
+    flex: none;
+}
+
+.buyer-main .detail .count .progress {
+    width: 200rpx;
+    height: 24rpx;
+    line-height: 24rpx;
+    background: rgba(255, 249, 31, 0.40);
+    border-radius: 20px;
+    font-family: PingFangSC-Regular;
+    font-size: 16rpx;
+    color: #CF1818;
+    flex: none;
+    position: relative;
+}
+
+.buyer-main .goodInfo {
+    padding: 30rpx 32rpx;
+}
+
+.buyer-main .detail .count .progress .bar {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FFF91F;
+    border-radius: 20px;
+    width: 20rpx;
+}
+
+.buyer-main .goodInfo .goodName {
+    font-family: PingFangSC-Medium;
+    font-size: 36rpx;
+    color: #444444;
+}
+
+.buyer-main .goodInfo .address {
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #444444;
+    margin: 20rpx 0;
+}
+
+.buyer-main .goodInfo .address .icon-address {
+    width: 21rpx;
+    height: 27rpx;
+    margin-right: 13rpx;
+}
+
+.buyer-main .goodInfo .outline {
+    background: #F6F6F6;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #A1A1A1;
+    padding: 20rpx;
+}
+
+.buyer-main .seckill-button {
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: #29C56E;
+    border-radius: 0;
+    outline: none;
+    border: none;
+    font-family: PingFangSC-Medium;
+    font-size: 34rpx;
+    color: #FFFFFF;
+}
+
+.buyer-main .seckill-button::after {
+    border-radius: 0;
+    border: 0 none;
+}
+
+.buyer-main .seckill-button[disabled] {
+    background: #C0C0C0;
+}
+
+.buyer-main .seckill-button.inProgress {
+    background-image: linear-gradient(-90deg, #FF5B41 0%, #FF773E 45%, #FF5B41 100%);
+}
+
+.buyer-main .seckill-button.bookTime {
+    display: flex;
+}
+
+.buyer-main .seckill-button.bookTime .timeLeft {
+    flex: auto;
+}
+
+.buyer-main .seckill-button.bookTime .notice {
+    flex: none;
+    width: 250rpx;
+    height: 100%;
+    background-image: linear-gradient(-90deg, #FF773E 0%, #FF5B41 100%);
+    font-family: PingFangSC-Medium;
+    font-size: 34rpx;
+    color: #FFFFFF;
+    text-indent: 60rpx;
+    position: relative;
+}
+
+.buyer-main .seckill-button.bookTime .notice .icon {
+    display: block;
+    content: '';
+    width: 48rpx;
+    height: 45rpx;
+    position: absolute;
+    left: 28rpx;
+    top: 28rpx;
+}
+
+.buyer-main .getPhone {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0);
+}
+
+.buyer-main .getPhone button {
+    /* width: 580rpx;
+    height: 600rpx; */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buyer-main .getPhone .joinButton {
+    width: 580rpx;
+    height: 600rpx;
+    display: block;
+}
+
+.buyer-main .bind-phone-module {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    z-index: 999;
+}
+
+.buyer-main .bind-phone-main {
+    background: #FFFFFF;
+    box-shadow: 0 4rpx 28rpx 0 rgba(0, 0, 0, 0.10);
+    border-radius: 10rpx;
+    width: 500rpx;
+    height: 476rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 36%;
+    margin: auto;
+}
+
+.buyer-main .bind-phone-main .bind-phone-close {
+    width: 24rpx;
+    height: 24rpx;
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+}
+
+.buyer-main .bind-phone-main .bind-phone-title {
+    padding: 50rpx 0 20rpx 0;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+}
+
+.buyer-main .bind-phone-main .bind-phone-content {
+    padding: 0 60rpx;
+    margin-bottom: 52rpx;
+}
+
+.buyer-main .bind-phone-main .bind-phone-content .bind-phone-content-item {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    padding: 24rpx 0;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.buyer-main .bind-phone-main .bind-phone-content .bind-phone-content-item .item-ipt {
+    flex: 1;
+}
+
+.buyer-main .bind-phone-main .bind-phone-content .bind-phone-content-item .phoneText {
+    border-left: 1px solid #E8E8E8;
+    padding-left: 40rpx;
+    width: 140rpx;
+}
+
+.buyer-main .bind-phone-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.buyer-main .bind-phone-footer .bind-phone-footer-btn {
+    width: 300rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    border-radius: 100rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #FFFFFF;
+}
+
+.buyer-main .ad_popError {
+    top: 42%
+}
+
+.seckill-button-flex{
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    opacity: 0;
+}
+.positionGoodNum{
+    position: absolute;
+    bottom:24rpx;
+    right: 24rpx;
+    width: 66rpx;
+    height: 36rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 20rpx;
+    color: #FFFFFF;
+    background: rgba(0,0,0,.5);
+    border-radius: 100rpx;
+    text-align: center;
+    line-height: 36rpx;
+}

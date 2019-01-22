@@ -1,0 +1,125 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.98",
+	"appid": "wx5dcfaad36777e61d",
+	"projectname": "activitySeckill",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 13,
+			"list": [
+				{
+					"id": -1,
+					"name": "apply",
+					"pathName": "pages/sell/apply/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "create(sell-secKill)",
+					"pathName": "pages/sell/secKill/index",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "buyer-secKill",
+					"pathName": "pages/buyer/secKill/index",
+					"query": "scene=IIhU"
+				},
+				{
+					"id": 3,
+					"name": "poster",
+					"pathName": "pages/sell/poster/index",
+					"query": "scene=Ir0U"
+				},
+				{
+					"id": 4,
+					"name": "sell-record",
+					"pathName": "pages/sell/record/index",
+					"query": "scene=IIeE"
+				},
+				{
+					"id": 5,
+					"name": "record",
+					"pathName": "pages/sell/record/index",
+					"query": "scene=IIeC"
+				},
+				{
+					"id": 5,
+					"name": "secKill-secKill",
+					"pathName": "pages/buyer/secKill/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "withdraw",
+					"pathName": "pages/sell/withdraw/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "webView",
+					"pathName": "pages/sell/webView/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "address",
+					"pathName": "pages/buyer/address/index",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "logView",
+					"pathName": "pages/buyer/logView/index",
+					"query": "scene=2f9c7efb-8ef5-4cf5-bd78-ccea7dc02493"
+				},
+				{
+					"id": 11,
+					"name": "bargain",
+					"pathName": "pages/buyer/bargain/bargain",
+					"query": "scene=IIDm"
+				},
+				{
+					"id": -1,
+					"name": "history",
+					"pathName": "pages/sell/history/index",
+					"query": ""
+				},
+				{
+					"id": 13,
+					"name": "weCropper",
+					"pathName": "pages/sell/weCropper/index",
+					"query": "src=''"
+				}
+			]
+		}
+	}
+}

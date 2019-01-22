@@ -1,0 +1,35 @@
+<!--pages/sell/history/index.wxml-->
+<wxs src="./../../../utils/filter.wxs" module="Filter"></wxs>
+<view wx:if="{{!dataList.length}}" class="historyNoCode">暂无历史记录...</view>
+<scroll-view wx:else scroll-y class="sell-withdraw-list" style="height: 100%" bindscrolltolower='getListLower'>
+    <view class="sell-withdraw-list-item" wx:for="{{dataList}}" wx:key="index">
+        <view class="item-top">
+            <view class="item-top-img">
+                <image class="item-top-imgs" src="{{item.coverPhoto}}" />
+                <view class="item-top-text">{{Filter.ylId(item.ylId)}}</view>
+            </view>
+            <view class="item-top-text">
+                <view class="item-top-text-top color4">
+                    {{item.name}}
+                </view>
+                <view class="item-top-text-bottom colorA1">
+                    <view class="item-top-text-bottom-num">
+                        <text>售出：</text>
+                        <text>{{item.totalSaledQuantity}}件</text>
+                    </view>
+                    <view class="item-top-text-bottom-num">
+                        <text>售价：</text>
+                        <text>¥{{item.showPrice}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item-bottom">
+            <view wx:if="{{item.status === 1}}" class="item-bottom-btn colorA1 borderA1" data-id="{{item.id}}" bindtap="stopActivity">终止活动</view>
+            <view wx:if="{{item.status === 1}}" class="item-bottom-btn colorRed borderRed" data-id="{{item.id}}" bindtap="goShare">分享</view>
+            <view class="item-bottom-btn color4 borderRed colorRed" data-id="{{item.id}}" bindtap="goRecord">销售记录</view>
+        </view>
+    </view>
+</scroll-view>
+
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>

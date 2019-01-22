@@ -1,0 +1,48 @@
+/* pages/sell/apply/index.wxss */
+.sell-apply {
+    height: 100%;
+    padding-top: 90rpx;
+}
+
+.sell-apply .sell-apply-title {
+    text-align: center;
+    font-family: PingFangSC-Medium;
+    font-size: 40rpx;
+    margin-bottom: 40rpx;
+}
+
+.sell-apply .sell-apply-from {
+    padding: 0 50rpx;
+    margin-bottom: 80rpx;
+}
+
+.sell-apply .sell-apply-from .sell-apply-from-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+.sell-apply .sell-apply-from .sell-apply-from-item .sell-apply-from-ite-text{
+    width: 56rpx;
+    text-align: right;
+    margin-right: 20rpx;
+    font-size: 28rpx;
+}
+.sell-apply .sell-apply-from .sell-apply-from-item .sell-apply-from-item-ipt{
+    flex: 1;
+    padding: 25rpx 56rpx 25rpx 30rpx;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+}
+.sell-apply .sell-apply-footer{
+    width: 290rpx;
+    height: 100rpx;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 100rpx;
+    font-family: PingFangSC-Medium;
+    font-size: 34rpx;
+    color: #FFFFFF;
+    background-image: linear-gradient(-90deg, #FF5B41 0%, #FF773E 45%, #FF5B41 100%);
+    box-shadow: 0 6rpx 11rpx 0 rgba(255,114,62,0.39), inset 0 8rpx 3rpx 0 rgba(255,209,129,0.32);
+    border-radius: 100rpx;
+}

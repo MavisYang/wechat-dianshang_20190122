@@ -1,0 +1,51 @@
+<view class="addOrrderBox">
+  <view class="address-view">
+    <image src="/images/icon_envelopeline@3x.png" class="payaAdrimg"></image>
+    <view class="address-list">
+      <view class="address-list-item">
+        <text class="item-title">收货人</text>
+        <input type="text" disabled bindtap='addAddress' value="{{fromData.name}}" maxlength="30"
+          placeholder="请输入收货人姓名" placeholder-class="colorA1" bindinput='addUserName'
+        />
+      </view>
+      <view class="address-list-item">
+        <text class="item-title">手机号</text>
+        <input type="number" disabled bindtap='addAddress' value="{{fromData.phone}}" maxlength="11"
+          placeholder="请输入手机号" placeholder-class="colorA1" bindinput='addUserPhone'
+        />
+      </view>
+      <view class="address-list-item" style='align-items:{{fromData.address!=""?"flex-start":"center"}}'>
+        <text class="item-title">收货地址</text>
+        <view wx:if='{{fromData.address!=""}}' class='address'>{{fromData.address}}</view>
+        <input wx:else type="text" disabled bindtap='addAddress' placeholder="添加收货地址" placeholder-class="colorA1"
+        />
+      </view>
+    </view>
+  </view>
+  <view class="order-view">
+    <view class="order-list">
+      <image src="{{productData.coverPhoto}}" class="skuImg"></image>
+      <view class='order-listItem'>
+        <view class="order-listInfo">{{productData.name}}</view>
+        <view class="order-listNum">
+          <text class="num colorA1">x 1</text>
+          <text class="price">
+            <text class="price-label">¥</text>
+            <text class="price-money">{{productData.showPrice?productData.showPrice:productData.retailPrice}}</text>
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="orderFooter-view">
+    <view>
+      <text>应付：</text>
+      <text class="payFooternum colorRed">
+        <text class="colorRed">¥</text>
+        <text class="totalPrice colorRed">{{productData.showPrice?productData.showPrice:productData.retailPrice}}</text>
+      </text>
+    </view>
+    <view bindtap='submitOrder' class="payFooterEnter">提交订单</view>
+  </view>
+  <view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+</view>

@@ -1,0 +1,119 @@
+<!--pages/buyer/bargain/bargain.wxml-->
+<scroll-view class='bargin-view' scroll-y style="background-image: url('https://cloud.gemii.cc/lizcloud/fs/noauth/media/5b319da00c3b460088f530b9')">
+  <view class="bargin-content">
+    <view class="groupNoEmpty">
+      <view class='groupWork-item'>
+        <view class='item-Pic'>
+          <text class='item-Pic-titleLogo'>{{getGoodsStyle}}</text>
+          <image class='item-img' src='{{bargainGoods.coverPhoto}}' />
+        </view>
+        <view class='item-info'>
+          <view class='item-info-title'>{{bargainGoods.name}}</view>
+          <view class='item-info-footer'>
+            <view class='groupUserNum'>
+              <text>¥</text>
+              <text>{{bargainGoods.retailPrice}}</text>
+              <text>¥{{bargainGoods.marketPrice}}</text>
+            </view>
+            <view class='goGroupWork'>
+              <text>限量{{bargainGoods.inventory}}件</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='bargin-price'>
+      <view class='bargin-price-title'>
+        已砍
+        <text class='colorYellow already-price'>{{bargainGoods.alreadyBargainPrice}}</text>元，还差
+        <text class='colorYellow'>{{bargainGoods.bargainPrice}}</text>元
+      </view>
+      <view class='bargin-price-line'>
+        <text class='already-price-line' style="width:{{percent}}"></text>
+      </view>
+      <view class='bargin-price-btn' wx:if="{{!hasUserInfo}}">
+        参与活动
+        <button class='canIUse-btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
+      </view>
+      <view wx:elif="{{bargainGoods.status == 1}}">
+        <block>
+          <form bindsubmit="formSubmit" report-submit="true" wx:if="{{btnStyle === 1}}">
+            <button class='bargin-price-btn' formType="submit" bindtap="selfChop">我来砍一刀</button>
+          </form>
+          <form bindsubmit="formSubmit" report-submit="true" wx:if="{{btnStyle === 6}}">
+            <button class='bargin-price-btn' formType="submit" bindtap="selfChop">再来一次</button>
+          </form>
+          <form bindsubmit="formSubmit" report-submit="true" wx:if="{{btnStyle === 2}}">
+            <button class='bargin-price-btn' formType="submit" open-type="share">呼朋唤友砍一刀</button>
+          </form>
+          <form bindsubmit="formSubmit" report-submit="true" wx:if="{{btnStyle === 3}}">
+            <button class='bargin-price-btn' formType="submit" bindtap="buyNew">立即购买</button>
+          </form>
+        </block>
+        <block>
+          <form bindsubmit="formSubmit" report-submit="true" wx:if="{{btnStyle === 4}}">
+            <button class='bargin-price-btn' formType="submit" bindtap="helpChop">帮TA砍一刀</button>
+          </form>
+          <form bindsubmit="formSubmit" report-submit="true" wx:if="{{btnStyle === 5}}">
+            <button class='bargin-price-btn' formType="submit" bindtap="hopeChop">我也要买</button>
+          </form>
+        </block>
+      </view>
+      <view wx:else>
+        <button class='bargin-price-btn noCodeBtn' bindtap="selfChop">{{textEnd}}</button>
+      </view>
+      <view class='bargin-price-time' wx:if="{{bargainGoods.status == 1}}">还剩{{timeLeftBargain}}结束，快来砍价吧～</view>
+      <view class='bargin-price-time' wx:else>{{textEnd}}~</view>
+    </view>
+    <view class='bargin-friend' wx:if='{{friendList.length>0}}'>
+      <view class='bargin-friend-title'>
+        <text class='bargin-friend-line'></text>
+        <text>好友砍价</text>
+        <text class='bargin-friend-line'></text>
+      </view>
+      <view class='bargin-friend-content'>
+        <view class='bargin-friend-content-list' wx:for='{{friendList}}' wx:key='index'>
+          <view class='bargin-friend-info'>
+            <image src='{{item.logoPath}}'></image>
+            <text class='nickName'>{{item.wxName}}</text>
+          </view>
+          <view class='bargin-friend-price'>砍掉{{item.bargainPrice}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class='bargin-address'>
+      <view class='bargin-address-phone bargin-flex' wx:if="{{phoneNum}}">
+        <view class='bargin-flex-img'>
+          <image src='/images/ic_phone@3x.png' class='phoneLogo'></image>
+        </view>
+        <text class='bargin-flex-text'>{{phoneNum.description}}</text>
+      </view>
+      <view class='bargin-address-address bargin-flex' wx:if="{{weChatNo}}">
+        <view class='bargin-flex-img'>
+          <image src='/images/ic_seller.png' class='addressLogo'></image>
+        </view>
+        <text class='bargin-flex-text'>{{weChatNo.description}}</text>
+      </view>
+      <view class='bargin-address-address bargin-flex' wx:else>
+        <view class='bargin-flex-img'>
+          <image src='/images/ic_location@3x.png' class='addressLogo'></image>
+        </view>
+        <text class='bargin-flex-text'>{{bargainGoods.productWarehouse.bondedWarehouseName}}</text>
+      </view>
+      <view class='bargin-address-product' wx:if="{{productDes}}">{{productDes}}</view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="bargin_prompt" wx:if="{{bargainPriceTip}}">已砍
+  <text class="colorYellow">{{bargainPriceTip}}</text>元</view>
+<view class='share_prompt' wx:if='{{sharePopMsg}}' bindtap='hideBargainShareTips'>
+  <view>
+    <view class='share_prompt_img'>
+      <image src='/images/pic_arrow@3x.png'></image>
+    </view>
+    <view class='share_prompt_content'>你已砍
+      <text class="colorYellow">{{sharePopMsg}}元</text>啦，邀请好友来协助吧</view>
+  </view>
+</view>
+<view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>

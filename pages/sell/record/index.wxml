@@ -1,0 +1,60 @@
+<view class="sell-record">
+    <view class="sell-record-header">
+        <view class="sell-record-header-content">
+            <image class="sell-record-header-content-img" src="{{dataList.skuPic}}" />
+            <view class="sell-record-header-content-text">{{dataList.skuName}}</view>
+        </view>
+    </view>
+    <view class="sell-record-list color4" wx:if="{{!dataList.orderRecords.length}}">
+        <view class="sell-record-list-nolist">
+            还没有客户抢购哦…
+        </view>
+    </view>
+    <view class="sell-record-list color4" wx:elif='{{dataList.orderRecords&&dataList.takeWay==1}}'>
+        <view class="sell-record-list-title">
+            <text>买家昵称</text>
+            <text>支付方式</text>
+        </view>
+        <scroll-view class="sell-record-list-content" scroll-y bindscrolltolower='getListLower'>
+            <view class="sell-record-list-item" wx:for="{{dataList.orderRecords}}" wx:key="index">
+                <view class="sell-record-list-item-left">
+                    <image src="{{item.logoPath}}" class="userImg"/>
+                    <view class="userText">
+                        <text class="color4 fontSize26 textLang">{{item.name}}</text>
+                        <text class="colorA1">{{item.createTime}}</text>
+                    </view>
+                </view>
+                <text class="color4 fontSize26">{{item.payType}}</text>
+            </view>
+            <view class="sell-record-list-item kong"></view>
+        </scroll-view>
+    </view>
+    <view class='sell-record-list color4' wx:elif='{{dataList.orderRecords&&dataList.takeWay==2}}'>
+        <scroll-view class="sell-record-address-list-content" scroll-y bindscrolltolower='getListLower'>
+            <view class="sell-record-address-list-title"></view>
+            <view class='sell-record-address-list' wx:for="{{dataList.orderRecords}}" wx:key="index">
+                <view class='sell-record-address-list-header'>
+                    <image class='user-avatar' src="{{item.logoPath}}"></image>
+                    <view class='user-info'>
+                        <text class='user-name'>{{item.name}}</text>
+                        <text class='user-record-time'>{{item.createTime}}</text>
+                    </view>
+                </view>
+                <view class='sell-record-address-list-content'>
+                    <view class="receipt-user address-list-content-receipt">
+                        <text class="title">收货人：</text>
+                        <view>{{item.receiveName?item.receiveName:''}}</view>
+                    </view>
+                    <view class="receipt-address address-list-content-receipt">
+                        <text class="title">收货地址：</text>
+                        <view>{{item.receiveAddress?item.receiveAddress:''}}</view>
+                    </view>
+                </view>
+                <view class="express-photos">
+                    <view class="takePhotoBtn" data-ftitemid='{{item.ftItemId}}' bindtap='addExpressPhotos'>{{item.expressImage?'更换快递照片':'添加快递照片'}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+</view>

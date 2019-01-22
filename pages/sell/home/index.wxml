@@ -1,0 +1,40 @@
+<view class="sell-home">
+    <view class="sell-home-header colorA1" wx:if="{{hasUserInfo}}" bindtap="showRule">
+        操作说明
+    </view>
+    <view class="sell-home-middle" wx:if="{{!hasUserInfo && canIUse}}">
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+            <image class="sell-home-middle-img" src="/images/ic_seckill@3x.png" />
+        </button>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+            <image class="sell-home-middle-img" src="/images/ic_bargain@3x.png" />
+        </button>
+    </view>
+    <view wx:else class="sell-home-middle">
+        <image class="sell-home-middle-img" src="/images/ic_seckill@3x.png" data-type="seckill" bindtap="pageGoSecKill" />
+        <image class="sell-home-middle-img" src="/images/ic_bargain@3x.png" data-type="bargain" bindtap="pageGoSecKill" />
+    </view>
+
+    <view class="sell-home-footer colorRed borderRed" wx:if="{{hasUserInfo}}" bindtap="pageGoCash">
+        已发起活动
+    </view>
+    <view class="sell-home-footer  borderRed" wx:else>
+        <button class="contacBtn colorRed" open-type="contact">获取二维码</button>
+    </view>
+    <view class="rule-module" wx:if="{{ruleState}}">
+        <view class="rule-module-content">
+            <view class="rule-module-content-title color4">秒杀小程序操作说明</view>
+            <view class="rule-module-content-text colorA1">
+                <view>1.可以设置线上支付或门店支付：</view>
+                <view>线上支付：客户线上支付后凭个人微信到店取货，微信支付会收取0.6%手续费；</view>
+                <view>门店支付：客户线上先抢名额，再凭个人微信到店付款并取货；</view>
+                <view>2.可以设置指定时间开始或立即开始；</view>
+                <view>3.可以转发活动到群里，也可以保存海报转发朋友圈；</view>
+                <view>4.在『已发布活动』中查询累积销售额，并可立即提现到个人微信账户；</view>
+                <view>5.在『已发布活动』可操作终止活动，分享活动页面，和查询购买记录。</view>
+            </view>
+            <view class="rule-module-content-btn color4" bindtap="hideRule">我知道了</view>
+        </view>
+    </view>
+    <view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+</view>

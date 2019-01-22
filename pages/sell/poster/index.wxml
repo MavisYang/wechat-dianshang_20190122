@@ -1,0 +1,18 @@
+<view class="sell-poster">
+    <scroll-view scroll-y class='sell-poster-box'>
+        <view class="sell-poster-header">
+            <!--<text bindtap="goBack" wx:if="{{updateState}}">返回修改</text>-->
+        </view>
+        <view class="sell-poster-middle">
+            <image class="sell-poster-middle-img" src="{{imgUrl}}" />
+        </view>
+    </scroll-view>
+    <form report-submit="{{true}}" bindsubmit="formSubmit">
+        <view class="sell-poster-footer">
+            <button formType="submit" open-type="share" class="sell-poster-footer-item">
+                <image src="/images/ic_wechat@3x.png" class="sell-poster-footer-item-img" /> 转发到群
+            </button>
+            <button formType="submit" class="sell-poster-footer-item" bindtap="downloadPoster">下载海报</button>
+        </view>
+    </form>
+</view>

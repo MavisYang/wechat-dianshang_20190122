@@ -1,0 +1,98 @@
+.historyNoCode {
+    height: 100%;
+    text-align: center;
+    line-height: 500rpx;
+    font-family: PingFangSC-Regular;
+    font-size: 28rpx;
+    color: #444;
+}
+
+.sell-withdraw-list {
+    height: 100%;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+}
+
+.sell-withdraw-list-item {
+    border-bottom: 1px solid #E6E6E6;
+    padding: 50rpx 0;
+    box-sizing: border-box;
+}
+
+.sell-withdraw-list-item .item-top {
+    display: flex;
+    justify-content: space-between;
+    height: 150rpx;
+    overflow: hidden;
+    margin-bottom: 40rpx;
+}
+
+.sell-withdraw-list-item .item-top .item-top-img {
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 20rpx;
+    position: relative;
+}
+
+.sell-withdraw-list-item .item-top .item-top-img .item-top-imgs {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.sell-withdraw-list-item .item-top .item-top-img .item-top-text {
+    width: 60rpx;
+    height: 35rpx;
+    text-align: center;
+    line-height: 35rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(120deg, #FF773E 0%, #FF4444 100%);
+    font-family: PingFangSC-Medium;
+    font-size: 22rpx;
+    color: #FFFFFF;
+}
+
+.sell-withdraw-list-item .item-top .item-top-text {
+    flex: 1;
+}
+
+.sell-withdraw-list-item .item-top .item-top-text .item-top-text-top {
+    font-size: 34rpx;
+    margin-bottom: 14rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.sell-withdraw-list-item .item-top .item-top-text .item-top-text-bottom {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+}
+
+.sell-withdraw-list-item .item-top .item-top-text .item-top-text-bottom .item-top-text-bottom-num {
+    margin-right: 19rpx;
+}
+
+.sell-withdraw-list-item .item-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.sell-withdraw-list-item .item-bottom .item-bottom-btn {
+    border-radius: 100rpx;
+    height: 66rpx;
+    width: 180rpx;
+    text-align: center;
+    line-height: 66rpx;
+    font-size: 28rpx;
+}
+
+.sell-withdraw-list-item .item-bottom .item-bottom-btn:nth-of-type(2) {
+    margin: 0 65rpx;
+}

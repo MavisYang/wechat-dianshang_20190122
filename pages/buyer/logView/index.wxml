@@ -1,0 +1,4 @@
+<!--pages/buyer/logView/index.wxml-->
+<scroll-view scroll-y class='log-view-main'>
+    <image class="log-view-img" src="{{imgUrl}}"/>
+</scroll-view>

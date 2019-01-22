@@ -1,0 +1,95 @@
+<!--pages/buyer/buyer.wxml-->
+<view class="buyer-main">
+    <scroll-view scroll-y style="height: calc(100% - 100rpx);">
+        <view class="imgBox">
+            <swiper class='goodImg' circular>
+                <block wx:for="{{goodData.productMedias}}" wx:key='index'>
+                <swiper-item class='goodImg'>
+                    <view class="goodImg">
+                        <image src="{{item.path}}" class="goodImg"/>
+                        <view class="positionGoodNum">{{index+1}}/{{goodData.productMedias.length}}</view>
+                    </view>
+                </swiper-item>
+                </block>
+            </swiper>
+            <!--<view class="goodImg" style="background: url({{goodData.coverPhoto}}) no-repeat;background-size: cover;background-position: center"></view>-->
+            <image class="icon-secKill" src="../../../images/secClock.png"></image>
+        </view>
+        <view class="detail">
+            <view class="price">
+                <text class="flex-item" style="font-family: PingFangSC-Semibold;font-size: 74rpx;margin: 0 12rpx 0 24rpx;">
+                    <text style="font-size: 50rpx;">￥</text>{{goodData.showPrice}}
+                </text>
+                <text class="flex-item" style="font-size: 26rpx;color: #FFFFFF;">
+                    <text style="opacity: 0.7;font-family: PingFangSC-Regular;text-decoration: line-through"
+                        wx:if="{{goodData.marketPrice&&goodData.marketPrice>0}}">
+                        <text>￥</text>{{goodData.marketPrice}}
+                    </text>
+                    <text style="font-family: PingFangSC-Semibold;">秒杀价</text>
+                </text>
+            </view>
+            <view class="count inProgress" wx:if="{{secKillFlag}}">
+                <text>还剩 {{timeLeftBuy}}</text>
+                <view class="progress">
+                    <text style="position:relative;z-index:2;">已抢{{goodData.totalSaledQuantity}}/{{goodData.totalQuantity}}</text>
+                    <view class="bar" style="width: {{percent}}"></view>
+                </view>
+            </view>
+            <view class="count inProgress" wx:else>
+                <text>限量{{goodData.totalQuantity?goodData.totalQuantity:0}}件</text>
+            </view>
+        </view>
+        <view class="goodInfo">
+            <text class='goodName'>{{goodData.name}}</text>
+            <view class="address">
+                <image class="icon-address" src="../../../images/ic_location@3x.png" wx:if="{{!weChatNo}}"></image>
+                <image class="icon-address" src="../../../images/ic_seller.png" wx:else></image>
+                <text wx:if="{{!weChatNo}}">{{goodData.productWarehouse.bondedWarehouseName}}</text>
+                <test wx:else>{{weChatNo.name}}: {{weChatNo.description}}</test>
+            </view>
+            <view class="outline" wx:if="{{productDescription&&productDescription.type==2&&productDescription.description}}">
+                {{productDescription.description}}
+            </view>
+        </view>
+    </scroll-view>
+    <form bindsubmit="formSubmit" report-submit="true">
+        <button class='seckill-button fininshed' disabled wx:if="{{status!=1 || expiredFlag}}">活动已结束</button>
+        <button class='seckill-button inProgress' wx:elif="{{secKillFlag&&repertory}}" bindtap="submitPurchase"
+            formType="submit">马上抢</button>
+        <button class='seckill-button fininshed' disabled wx:elif="{{secKillFlag&&!repertory}}">已抢完</button>
+        <button class='seckill-button bookTime' wx:else formType="submit" bindtap="bookGood">
+            <view class="timeLeft">距离开始还有 {{timeLeft}}</view>
+            <view class="notice">
+                <image class="icon" src='../../../images/ic_time.png'></image>
+                抢购提醒
+            </view>
+        </button>
+    </form>
+    <view class="getPhone" wx:if="{{!hasUserInfo && canIUse}}">
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        </button>
+    </view>
+    <view class="bind-phone-module" wx:if="{{phoneMS}}">
+        <view class="bind-phone-main">
+            <image class="bind-phone-close" bindtap="closePhoneModule" src="/images/ic_close.png"
+            />
+            <view class="bind-phone-title">绑定手机号</view>
+            <view class="bind-phone-content">
+                <view class="bind-phone-content-item">
+                    <input bindinput="changePhone" maxlength="11" type="number" focus="{{true}}" placeholder="输入手机号码作为取货凭证"
+                        placeholder-class="colorA1" class="item-ipt color4" />
+                </view>
+                <view class="bind-phone-content-item">
+                    <input bindinput="changeCode" maxlength="6" type="number" placeholder="输入验证码" placeholder-class="colorA1"
+                        class="item-ipt color4" />
+                    <view bindtap="getPhoneCode" class="{{phoneCodeState?'phoneText colorRed':'phoneText colorA1'}}">{{phoneText}}</view>
+                </view>
+            </view>
+            <view class="bind-phone-footer">
+                <view class="{{phoneBtnState?'bind-phone-footer-btn bgColorS':'bind-phone-footer-btn bgColorC0'}}"
+                    bindtap="bindPhone">绑定手机号</view>
+            </view>
+        </view>
+    </view>
+    <view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+</view>

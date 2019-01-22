@@ -1,0 +1,380 @@
+/* pages/buyer/bargain/bargain.wxss */
+
+.colorRed {
+  color: #ff3939;
+}
+
+.colorYellow {
+  color: #fef43a;
+}
+
+/*flex 布局  */
+
+.bargin-view {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.bargin-content {
+  padding: 60rpx 30rpx;
+}
+
+.groupNoEmpty {
+  /* min-height: 100%; */
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.groupWork-item {
+  /* height: 260rpx; */
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.groupWork-item .item-Pic {
+  width: 200rpx;
+  height: 200rpx;
+  position: relative;
+}
+
+.groupWork-item .item-img {
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.item-Pic .item-Pic-titleLogo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #fff;
+  width: 112rpx;
+  height: 60tpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+}
+
+.groupWork-item .item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200rpx;
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.groupWork-item .item-info .item-info-title {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #444;
+  display: -webkit-box;
+  display: -moz-box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  -moz-line-clamp: 2;
+  overflow: hidden;
+}
+
+.item-info-content {
+  flex: 1;
+}
+
+.item-info-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-info-footer .groupUserNum {
+  font-family: PingFangSC-Semibold;
+  color: #ff3939;
+}
+
+.item-info-footer .groupUserNum text:nth-child(1) {
+  font-size: 36rpx;
+}
+
+.item-info-footer .groupUserNum text:nth-child(2) {
+  font-size: 48rpx;
+  margin-left: 8rpx;
+  margin-right: 16rpx;
+}
+
+.item-info-footer .groupUserNum text:nth-child(3) {
+  text-decoration: line-through;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #444;
+  opacity: 0.7;
+}
+
+.item-info-footer .goGroupWork {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #444;
+}
+
+.bargin-price {
+  text-align: center;
+  margin: 50rpx;
+}
+
+.bargin-price-title {
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.bargin-price-title .already-price {
+  font-size: 48rpx;
+}
+
+.bargin-price-line {
+  position: relative;
+  height: 16rpx;
+  background: rgba(225, 225, 225, 0.7);
+  border-radius: 100rpx;
+  margin-top: 25rpx;
+  margin-bottom: 50rpx;
+}
+
+.bargin-price-line .already-price-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 200rpx;
+  height: 16rpx;
+  background: #fef43a;
+  border-radius: 100rpx;
+}
+
+.bargin-price-btn {
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-image: linear-gradient(-90deg, #ffdd41 0%, #fff000 48%, #ffe128 100%);
+  box-shadow: 0 6px 11px 0 rgba(255, 181, 62, 0.39),
+                inset 0 8px 3px 0 rgba(252, 255, 129, 0.32);
+  border-radius: 100px;
+  font-family: PingFangSC-Medium;
+  font-size: 34rpx;
+  color: #ff3939;
+}
+.bargin-price-btn.noCodeBtn{
+  background: #dadada;
+  color: #fff;
+  box-shadow:none;
+}
+
+.canIUse-btn {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100rpx;
+}
+
+.bargin-price-time {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #fff;
+  margin-top: 30rpx;
+}
+
+.bargin-price-time text {
+  width: 140rpx;
+  display: inline-block;
+}
+
+.bargin-friend {
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.bargin-friend-title {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 47rpx;
+}
+
+.bargin-friend-title text {
+  width: 33.3%;
+  text-align: center;
+}
+
+.bargin-friend-line {
+  height: 1rpx;
+  background: #dadada;
+}
+
+.bargin-friend-content {
+  padding: 0 38rpx;
+}
+
+.bargin-friend-content .bargin-friend-content-list {
+  padding: 18rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bargin-friend-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bargin-friend-info image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.bargin-friend-info .nickName {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #444;
+  width: 300rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.bargin-friend-price {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #ff763e;
+}
+
+.bargin-address {
+  background: #fff;
+  border-radius: 10px;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #444;
+  padding: 50rpx 35rpx;
+  margin-top: 30rpx;
+}
+
+.bargin-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.bargin-flex .bargin-flex-img {
+  width: 40rpx;
+}
+
+.bargin-flex .bargin-flex-text {
+  width: calc(100% - 40rpx);
+}
+
+.bargin-address-phone {
+  align-items: center;
+}
+
+.bargin-address-phone .phoneLogo {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.bargin-address-address {
+  margin-top: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.bargin-address-address .addressLogo {
+  width: 21rpx;
+  height: 27rpx;
+  margin-top: 8rpx;
+}
+
+.bargin-address-product {
+  background: #f6f6f6;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #a1a1a1;
+  padding: 20rpx 19rpx;
+}
+
+/*砍价提示*/
+
+.bargin_prompt {
+  z-index: 990;
+  position: fixed;
+  width: 405rpx;
+  box-sizing: border-box;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 100rpx;
+  background: rgba(0, 0, 0, 0.6);
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #fff;
+}
+
+.bargin_prompt text {
+  font-size: 46rpx;
+}
+
+.share_prompt {
+  z-index: 990;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+}
+
+.share_prompt>view {
+  padding-left: 107rpx;
+  padding-right: 86rpx;
+}
+
+.share_prompt .share_prompt_img {
+  text-align: right;
+  padding-top: 12rpx;
+}
+
+.share_prompt image {
+  width: 76rpx;
+  height: 110rpx;
+}
+
+.share_prompt .share_prompt_content {
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #fff;
+}

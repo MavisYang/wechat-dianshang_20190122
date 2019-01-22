@@ -1,0 +1,66 @@
+<wxs src="./../../../utils/filter.wxs" module="Filter"></wxs>
+<view class="sell-withdraw">
+    <view class="sell-withdraw-header">
+        <view class="sell-withdraw-header-left">
+            <view class="sell-withdraw-header-left-top">
+                <view class="title">累计销售额（元）</view>
+                <view class="money">{{cumulativeIncome}}</view>
+            </view>
+            <view class="sell-withdraw-header-left-bottom">
+                <view class="title">可提现（元）</view>
+                <view class="money">{{cashMoney}}</view>
+            </view>
+        </view>
+        <view class="sell-withdraw-header-right">
+            <view class="historytxt" bindtap="goHistory">历史活动</view>
+            <view class="colorRed cash-btn" bindtap="showCash">提现</view>
+        </view>
+    </view>
+    <scroll-view scroll-y class="sell-withdraw-list" bindscrolltolower='getListLower'>
+        <view class="sell-withdraw-list-item" wx:for="{{dataList}}" wx:key="index">
+            <view class="item-top">
+                <view class="item-top-img">
+                    <image class="item-top-imgs" src="{{item.coverPhoto}}" />
+                    <view class="item-top-text">{{Filter.ylId(item.ylId)}}</view>
+                </view>
+                <view class="item-top-text">
+                    <view class="item-top-text-top color4">
+                        {{item.name}}
+                    </view>
+                    <view class="item-top-text-bottom colorA1">
+                        <view class="item-top-text-bottom-num">
+                            <text>售出：</text>
+                            <text>{{item.totalSaledQuantity}}件</text>
+                        </view>
+                        <view class="item-top-text-bottom-num">
+                            <text>售价：</text>
+                            <text>¥{{item.showPrice}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item-bottom">
+                <view wx:if="{{item.status === 1}}" class="item-bottom-btn colorA1 borderA1" data-id="{{item.id}}" bindtap="stopActivity">终止活动</view>
+                <view wx:if="{{item.status === 1}}" class="item-bottom-btn colorRed borderRed" data-id="{{item.id}}" bindtap="goShare">分享</view>
+                <view class="item-bottom-btn color4 borderRed colorRed" data-id="{{item.id}}" bindtap="goRecord">销售记录</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="ad_popError" wx:if="{{popErrorMsg}}">{{popErrorMsg}}</view>
+    <view class="cash-module" wx:if="{{cashStatus}}">
+        <view class="cash-module-box">
+            <view class="cash-module-box-header">提现金额</view>
+            <view class="cash-module-box-middle">
+                <view class="ipu-box">
+                    <image src="/images/ic_withdraw_rmb.png" class="icon-widthdraw" />
+                    <input type="digit" focus="{{true}}" class="cash-module-box-middle-ipt" value="{{cashMoneyValue}}" placeholder-class="cash-module-box-middle-ipt-p" bindinput="iptCashMoney" />
+                </view>
+                <text class="cash-module-box-middle-ipt-text" bindtap="cashAllMoney" data-money='{{cashMoney}}'>全部提现</text>
+            </view>
+            <view class="cash-module-box-footer">
+                <view class="cash-module-box-footer-cancel btn" bindtap="hideCash">取消</view>
+                <view class="cash-module-box-footer-confirm btn" bindtap="confirmCash">确定</view>
+            </view>
+        </view>
+    </view>
+</view>

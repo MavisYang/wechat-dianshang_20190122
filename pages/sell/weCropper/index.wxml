@@ -1,0 +1,9 @@
+<!--pages/sell/weCropper/index.wxml-->
+<import src="../../../we-cropper/we-cropper.wxml" />
+
+<view style="height: 100%;background: #000;">
+    <template is="we-cropper" data="{{...cropperOpt}}" />
+    <view class="cropper-buttons">
+        <view class="getCropperImage" bindtap="getCropperImage">截取图片</view>
+    </view>
+</view>

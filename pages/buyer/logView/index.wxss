@@ -1,0 +1,11 @@
+/* pages/buyer/logView/index.wxss */
+.log-view-main{
+    height: 100%;
+    width: 100%;
+}
+.log-view-img{
+    display: block;
+    height: 960rpx;
+    width: 600rpx;
+    margin: 40rpx auto;
+}

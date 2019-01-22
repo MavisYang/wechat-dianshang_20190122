@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/sell/home/index",
+    "pages/sell/withdraw/index",
+    "pages/sell/secKill/index",
+    "pages/sell/apply/index",
+    "pages/sell/poster/index",
+    "pages/sell/record/index",
+    "pages/buyer/secKill/index",
+    "pages/buyer/success/index",
+    "pages/buyer/address/index",
+    "pages/sell/webView/index",
+    "pages/buyer/logView/index",
+    "pages/buyer/bargain/bargain",
+    "pages/sell/history/index",
+    "pages/sell/weCropper/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF3939",
+    "navigationBarTitleText": "好物来",
+    "navigationBarTextStyle": "#FFF"
+  }
+}

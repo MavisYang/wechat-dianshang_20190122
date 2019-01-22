@@ -1,0 +1,20 @@
+<!--pages/buyer/success/index.wxml-->
+<view class="success-main">
+    <view class="{{styleBg === '$bargain$'?'success bargain':'success seckill'}}">
+        <view class="order">
+            <view class="goodImage" style="background: url({{coverPhoto}}) no-repeat;background-size: cover;background-position: center"></view>
+            <view class="goodName">{{goodName}}</view>
+            <view class="address">
+                <image class="icon-address" src="/images/ic_location@3x.png" wx:if="{{!weChatNo}}"></image>
+                <image class="icon-address" src="/images/ic_seller.png" wx:else></image>
+                <text class='text' wx:if="{{!weChatNo}}">{{address}}</text>
+                <text class='text' wx:else>{{weChatNo.name}}: {{weChatNo.description}}</text>
+            </view>
+            <view wx:if='{{!weChatNo}}'>
+                <view class="tip" wx:if="{{code==8}}">*请凭个人微信到店付款并取货</view>
+                <view class="tip" wx:else>*请凭个人微信到店取货</view>
+            </view>
+            <view class="tip" wx:else>*请耐心等待商家发货</view>
+        </view>
+    </view>
+</view>
